@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AstroJournal"
 include(":app")
+include(":feature:auth")
