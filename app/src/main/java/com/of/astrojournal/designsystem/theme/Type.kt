@@ -1,4 +1,4 @@
-package com.of.astrojournal.ui.theme
+package com.of.astrojournal.designsystem.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

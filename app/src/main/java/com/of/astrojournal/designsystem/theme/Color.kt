@@ -1,4 +1,4 @@
-package com.of.astrojournal.ui.theme
+package com.of.astrojournal.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 

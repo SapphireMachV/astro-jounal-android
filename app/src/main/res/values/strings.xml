@@ -1,3 +1,23 @@
 <resources>
+
+    <!-- app region -->
     <string name="app_name">AstroJournal</string>
+    <!-- app endregion -->
+
+    <!-- auth region -->
+    <string name="auth_login_button_forgot_password">Forgot Password</string>
+    <string name="auth_login_button_login">Login</string>
+    <string name="auth_login_button_register">Register</string>
+
+    <string name="auth_login_textfield_email">Email</string>
+    <string name="auth_login_textfield_password">Password</string>
+
+    <string name="auth_semantic_login_screen">Login Screen</string>
+    <!-- auth endregion -->
+
+    <!-- designSystem region -->
+    <string name="designsystem_semantic_eye_icon_button">Eye Icon Button</string>
+    <string name="designsystem_semantic_top_bar">Astro Journal Top Bar</string>
+    <!-- designSystem endregion -->
+
 </resources>
