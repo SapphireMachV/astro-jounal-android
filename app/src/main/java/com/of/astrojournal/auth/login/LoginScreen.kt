@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -27,10 +28,35 @@ import com.of.astrojournal.auth.login.components.ForgotPasswordText
 import com.of.astrojournal.auth.login.components.LoginButton
 import com.of.astrojournal.auth.login.components.PasswordTextField
 import com.of.astrojournal.auth.login.components.RegisterButton
+import com.of.astrojournal.auth.login.tooling.LoginScreenTestData
 import com.of.astrojournal.designsystem.component.AstroJournalTopBar
 
 @Composable
+fun LoginScreen(viewModel: LoginViewModel) {
+    val email by viewModel.email.collectAsState()
+    val password by viewModel.password.collectAsState()
+
+    LoginScreen(
+        email = email,
+        password = password,
+        onEmailChange = viewModel::onEmailChange,
+        onPasswordChange = viewModel::onPasswordChange,
+        onForgotPasswordClick = {
+        },
+        onLoginClick = {
+        },
+        onRegisterClick = {
+        }
+    )
+
+}
+
+@Composable
 internal fun LoginScreen(
+    email: String,
+    password: String,
+    onEmailChange: (String) -> Unit,
+    onPasswordChange: (String) -> Unit,
     onForgotPasswordClick: () -> Unit,
     onLoginClick: () -> Unit,
     onRegisterClick: () -> Unit,
@@ -47,8 +73,6 @@ internal fun LoginScreen(
                 .fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-            var email by remember { mutableStateOf("") }
-            var password by remember { mutableStateOf("") }
             var usePasswordFilter by remember { mutableStateOf(true) }
 
             val passwordVisualTransformation = if (usePasswordFilter) {
@@ -65,11 +89,11 @@ internal fun LoginScreen(
                     space = 8.dp,
                 ),
             ) {
-                EmailTextField(email = email) { email = it }
+                EmailTextField(email = email, onEmailChange = onEmailChange)
                 PasswordTextField(
                     password = password,
                     visualTransformation = passwordVisualTransformation,
-                    onPasswordChange = { password = it }
+                    onPasswordChange = onPasswordChange
                 ) {
                     usePasswordFilter = !usePasswordFilter
                 }
@@ -84,9 +108,5 @@ internal fun LoginScreen(
 @Preview
 @Composable
 private fun LoginScreenPreview() {
-    LoginScreen(
-        onForgotPasswordClick = {},
-        onLoginClick = {},
-        onRegisterClick = {}
-    )
+    LoginScreenTestData()
 }

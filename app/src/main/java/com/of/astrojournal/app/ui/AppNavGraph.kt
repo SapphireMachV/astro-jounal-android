@@ -1,6 +1,7 @@
 package com.of.astrojournal.app.ui
 
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -30,11 +31,7 @@ fun AppNavGraph(
     NavHost(navController = navController, startDestination = startDestination) {
         navigation(startDestination = AppDestinations.Launch.AUTH, route = AppRoutes.LAUNCH) {
             composable(AppDestinations.Launch.AUTH) {
-                LoginScreen(
-                    onForgotPasswordClick = {},
-                    onLoginClick = {},
-                    onRegisterClick = {}
-                )
+                LoginScreen(hiltViewModel())
             }
         }
     }
