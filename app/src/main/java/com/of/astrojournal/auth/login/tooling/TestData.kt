@@ -8,7 +8,7 @@ import androidx.compose.runtime.setValue
 import com.of.astrojournal.auth.login.LoginScreen
 
 @Composable
-fun LoginScreenTestData() {
+internal fun LoginScreenTestData() {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 

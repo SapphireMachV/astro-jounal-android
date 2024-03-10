@@ -48,7 +48,6 @@ fun LoginScreen(viewModel: LoginViewModel) {
         onRegisterClick = {
         }
     )
-
 }
 
 @Composable
