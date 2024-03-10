@@ -1,8 +1,8 @@
-package com.of.astrojournal.ui
+package com.of.astrojournal.app.ui
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
-import com.of.astrojournal.ui.theme.AstroJournalTheme
+import com.of.astrojournal.designsystem.theme.AstroJournalTheme
 
 @Composable
 fun App() {

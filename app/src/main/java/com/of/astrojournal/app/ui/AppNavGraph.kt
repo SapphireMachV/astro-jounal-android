@@ -1,4 +1,4 @@
-package com.of.astrojournal.ui
+package com.of.astrojournal.app.ui
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
@@ -6,7 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
-import com.of.feature.auth.login.LoginScreen
+import com.of.astrojournal.auth.login.LoginScreen
 
 private object AppRoutes {
 
@@ -30,7 +30,11 @@ fun AppNavGraph(
     NavHost(navController = navController, startDestination = startDestination) {
         navigation(startDestination = AppDestinations.Launch.AUTH, route = AppRoutes.LAUNCH) {
             composable(AppDestinations.Launch.AUTH) {
-                LoginScreen()
+                LoginScreen(
+                    onForgotPasswordClick = {},
+                    onLoginClick = {},
+                    onRegisterClick = {}
+                )
             }
         }
     }
