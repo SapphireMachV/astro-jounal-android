@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.of.astrojournal.auth.login.LoginScreen
+import kotlinx.coroutines.flow.MutableStateFlow
 
 @Composable
 internal fun LoginScreenTestData() {
@@ -13,8 +14,8 @@ internal fun LoginScreenTestData() {
     var password by remember { mutableStateOf("") }
 
     LoginScreen(
-        email = email,
-        password = password,
+        email = MutableStateFlow(""),
+        password = MutableStateFlow(""),
         onEmailChange = { email = it },
         onPasswordChange = { password = it },
         onForgotPasswordClick = {},

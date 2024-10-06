@@ -11,15 +11,21 @@ import androidx.compose.ui.semantics.semantics
 import com.of.astrojournal.R
 
 @Composable
-fun EyeIconButton(onClick: () -> Unit) {
+fun VisibilityIconButton(isVisible: Boolean, onClick: () -> Unit) {
     val description = stringResource(R.string.designsystem_semantic_eye_icon_button)
+
+    val painter = if (isVisible) {
+        R.drawable.ic_visibility
+    } else {
+        R.drawable.ic_visibility_off
+    }
 
     IconButton(
         onClick = onClick,
         modifier = Modifier.semantics { contentDescription = description }
     ) {
         Icon(
-            painter = painterResource(R.drawable.ic_eye), contentDescription = null
+            painter = painterResource(painter), contentDescription = null
         )
     }
 }

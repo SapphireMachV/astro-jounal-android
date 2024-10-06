@@ -1,23 +1,29 @@
 <resources>
 
     <!-- app region -->
-    <string name="app_name">AstroJournal</string>
+    <string name="app_name" translatable="false">AstroJournal</string>
+
+    <string name="email">Email</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
     <!-- app endregion -->
 
     <!-- auth region -->
-    <string name="auth_login_button_forgot_password">Forgot Password</string>
-    <string name="auth_login_button_login">Login</string>
-    <string name="auth_login_button_register">Register</string>
+    <string name="auth_login_button_forgot_password">@string/forgot_password</string>
+    <string name="auth_login_button_login">@string/login</string>
+    <string name="auth_login_button_register">@string/register</string>
 
-    <string name="auth_login_textfield_email">Email</string>
-    <string name="auth_login_textfield_password">Password</string>
+    <string name="auth_login_textfield_email">@string/email</string>
+    <string name="auth_login_textfield_password">@string/password</string>
 
-    <string name="auth_semantic_login_screen">Login Screen</string>
+    <string name="auth_semantic_login_screen" translatable="false">Login Screen</string>
     <!-- auth endregion -->
 
     <!-- designSystem region -->
-    <string name="designsystem_semantic_eye_icon_button">Eye Icon Button</string>
-    <string name="designsystem_semantic_top_bar">Astro Journal Top Bar</string>
+    <string name="designsystem_semantic_eye_icon_button" translatable="false">Eye Icon Button</string>
+    <string name="designsystem_semantic_top_bar" translatable="false">Astro Journal Top Bar</string>
     <!-- designSystem endregion -->
 
 </resources>
